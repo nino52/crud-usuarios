@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Project - Programación III</title>
+    <!-- Conexión con los estilos -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
+        <!-- Refactor: Actualización de estructura -->
         <h1>Sistema de Gestión de Productos (CRUD)</h1>
     </header>
 
     <main>
+        <!-- Formulario para Crear (Create) y potencialmente Actualizar (Update) -->
         <section id="crud-form">
             <h2>Agregar/Editar Producto</h2>
             <form id="product-form">
@@ -23,6 +26,7 @@
 
         <hr>
 
+        <!-- Sección donde se mostrarán los datos (Read) -->
         <section id="crud-list">
             <h2>Lista de Productos</h2>
             <table id="product-table">
@@ -35,7 +39,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    </tbody>
+                    <!-- Filas se insertarán aquí con JavaScript -->
+                </tbody>
             </table>
         </section>
     </main>
@@ -44,6 +49,7 @@
         <p>&copy; 2025 - Tarea 3: Git Flow</p>
     </footer>
 
+    <!-- Conexión con el archivo de JavaScript -->
     <script src="js/app.js"></script>
 </body>
 </html>
