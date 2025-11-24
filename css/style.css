@@ -98,3 +98,35 @@ footer {
     font-size: 0.9em;
     margin-top: 20px;
 }
+
+/* --- Mejoras para la Feature Estilos Finales --- */
+
+/* Hover para la tabla */
+#product-table tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s;
+}
+
+/* Estilos de botones de acción */
+#product-table .edit-btn {
+    background-color: #ffc107; /* Amarillo */
+    color: #212529;
+}
+#product-table .edit-btn:hover {
+    background-color: #e0a800;
+}
+
+#product-table .delete-btn {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+}
+#product-table .delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Foco y diseño de inputs */
+#product-form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
