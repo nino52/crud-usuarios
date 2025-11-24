@@ -84,7 +84,7 @@ function renderProducts() {
                 <td>$${product.price.toFixed(2)}</td>
                 <td>
                     <button class="edit-btn" data-id="${product.id}">Editar</button>
-                    <button class="delete-btn" data-id="${product.id}" disabled>Eliminar</button>
+                    <button class="delete-btn" data-id="${product.id}">Eliminar</button>
                 </td>
             `;
         });
@@ -92,6 +92,11 @@ function renderProducts() {
         // Asignar listeners de evento a los nuevos botones de Editar
         document.querySelectorAll('.edit-btn').forEach(button => {
             button.addEventListener('click', startEdit);
+        });
+        
+        // >>> NUEVO: Asignar listeners de evento a los nuevos botones de Eliminar
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', deleteProduct);
         });
     }
 }
@@ -113,4 +118,22 @@ function startEdit(event) {
         // Cambiar el texto del botón para que el usuario sepa que está actualizando
         document.querySelector('#product-form button').textContent = 'Actualizar Producto';
     }
+}
+
+// >>> FUNCIÓN NUEVA: ELIMINA UN PRODUCTO (Delete)
+function deleteProduct(event) {
+    // Pedir confirmación antes de eliminar
+    if (!confirm('¿Estás seguro de que quieres eliminar este producto?')) {
+        return;
+    }
+    
+    const idToDelete = parseInt(event.target.dataset.id);
+    
+    // FILTRAR (Delete): Crea un nuevo array excluyendo el producto con el ID a eliminar
+    products = products.filter(p => p.id !== idToDelete);
+
+    console.log('Producto Eliminado:', idToDelete);
+    
+    // Actualizar la lista
+    renderProducts();
 }
